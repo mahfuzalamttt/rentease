@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Navbar from "@/components/navbar";
+import WishlistButton from "@/components/WishlistButton";
 
 const products = [
   {
@@ -119,9 +120,9 @@ export default async function ProductDetailPage({
                 Rent Now
               </button>
 
-              <button className="rounded-xl border border-slate-300 bg-white px-8 py-4 transition hover:bg-slate-100">
-                Add to Wishlist
-              </button>
+              <WishlistButton
+                productId={product.id}
+              />
 
             </div>
 
