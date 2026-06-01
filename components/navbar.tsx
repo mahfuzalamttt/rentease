@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 export default function Navbar() {
 
   const [wishlistCount, setWishlistCount] = useState(0);
+  const [cartCount, setCartCount] = useState(0);
 
   useEffect(() => {
   const savedWishlist = localStorage.getItem("wishlist");
@@ -13,6 +14,15 @@ export default function Navbar() {
   if (savedWishlist) {
     const wishlist = JSON.parse(savedWishlist);
     setWishlistCount(wishlist.length);
+  }
+  }, []);
+
+  useEffect(() => {
+  const savedCart = localStorage.getItem("cart");
+
+  if (savedCart) {
+    const cart = JSON.parse(savedCart);
+    setCartCount(cart.length);
   }
   }, []);
 
@@ -42,6 +52,32 @@ export default function Navbar() {
   };
   }, []);
 
+  useEffect(() => {
+  const updateCartCount = () => {
+    const savedCart =
+      localStorage.getItem("cart");
+
+    if (savedCart) {
+      const cart = JSON.parse(savedCart);
+      setCartCount(cart.length);
+    } else {
+      setCartCount(0);
+    }
+  };
+
+  window.addEventListener(
+    "cartUpdated",
+    updateCartCount
+  );
+
+  return () => {
+    window.removeEventListener(
+      "cartUpdated",
+      updateCartCount
+    );
+  };
+  }, []);
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -66,6 +102,10 @@ export default function Navbar() {
 
           <Link href="/wishlist" className="transition hover:text-indigo-600">
             Wishlist ({wishlistCount})
+          </Link>
+
+          <Link href="/cart" className="transition hover:text-indigo-600">
+            Cart ({cartCount})
           </Link>
 
           <Link href="/about" className="transition hover:text-indigo-600">
@@ -110,6 +150,12 @@ export default function Navbar() {
             <li>
               <Link href="/wishlist" className="transition hover:text-indigo-600">
                 Wishlist ({wishlistCount})
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/cart" className="transition hover:text-indigo-600">
+                Cart ({cartCount})
               </Link>
             </li>
 

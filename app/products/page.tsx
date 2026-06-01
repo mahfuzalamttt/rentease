@@ -60,7 +60,7 @@ export default function ProductsPage() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
   const [wishlist, setWishlist] = useState<number[]>([]);
-
+  const [cart, setCart] = useState<number[]>([]);
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -99,7 +99,15 @@ export default function ProductsPage() {
       syncWishlist
     );
   };
-}, []);
+  }, []);
+
+  useEffect(() => {
+  const savedCart = localStorage.getItem("cart");
+
+  if (savedCart) {
+    setCart(JSON.parse(savedCart));
+  }
+  }, []);
 
   const filteredProducts = products.filter((product) => {
   const matchesSearch = product.name
@@ -264,7 +272,41 @@ export default function ProductsPage() {
                       {wishlist.includes(product.id) ? "❤️" : "🤍"}
                     </button>
                   </div>
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
 
+                      let updatedCart;
+
+                      if (cart.includes(product.id)) {
+                        updatedCart = cart.filter(
+                          (id) => id !== product.id
+                        );
+                      } else {
+                        updatedCart = [...cart, product.id];
+                      }
+
+                      setCart(updatedCart);
+
+                      localStorage.setItem(
+                        "cart",
+                        JSON.stringify(updatedCart)
+                      );
+
+                      window.dispatchEvent(
+                        new Event("cartUpdated")
+                      );
+                    }}
+                    className={`mt-4 w-full rounded-xl px-4 py-3 transition ${
+                      cart.includes(product.id)
+                        ? "bg-green-100 text-green-700 border border-green-300"
+                        : "bg-slate-200 hover:bg-slate-300"
+                    }`}
+                  >
+                    {cart.includes(product.id)
+                      ? "✅ Added to Cart"
+                      : "🛒 Add to Cart"}
+                  </button>
                   <button className="mt-6 w-full rounded-xl bg-indigo-600 px-4 py-3 text-white transition hover:bg-indigo-700">
                     Rent Now
                   </button>
