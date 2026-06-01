@@ -1,0 +1,272 @@
+"use client";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import Navbar from "@/components/navbar";
+
+const products = [
+  {
+    id: 1,
+    name: "Modern Sofa",
+    category: "Furniture",
+    price: "₹1499/month",
+    image: "🛋️",
+  },
+
+  {
+    id: 2,
+    name: "Double Bed",
+    category: "Furniture",
+    price: "₹1199/month",
+    image: "🛏️",
+  },
+
+  {
+    id: 3,
+    name: "Smart TV",
+    category: "Appliance",
+    price: "₹999/month",
+    image: "📺",
+  },
+
+  {
+    id: 4,
+    name: "Refrigerator",
+    category: "Appliance",
+    price: "₹1299/month",
+    image: "❄️",
+  },
+
+  {
+    id: 5,
+    name: "Washing Machine",
+    category: "Appliance",
+    price: "₹899/month",
+    image: "🧺",
+  },
+
+  {
+    id: 6,
+    name: "Study Table",
+    category: "Furniture",
+    price: "₹699/month",
+    image: "🪑",
+  },
+];
+
+
+
+export default function ProductsPage() {
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("All");
+  const [wishlist, setWishlist] = useState<number[]>([]);
+
+  useEffect(() => {
+  const savedWishlist = localStorage.getItem("wishlist");
+
+  if (savedWishlist) {
+    setWishlist(JSON.parse(savedWishlist));
+  }
+  }, []);
+
+
+  useEffect(() => {
+  const syncWishlist = () => {
+    const savedWishlist =
+      localStorage.getItem("wishlist");
+
+    if (savedWishlist) {
+      setWishlist(JSON.parse(savedWishlist));
+    }
+  };
+
+  window.addEventListener("focus", syncWishlist);
+
+  return () => {
+    window.removeEventListener(
+      "focus",
+      syncWishlist
+    );
+  };
+}, []);
+
+  const filteredProducts = products.filter((product) => {
+  const matchesSearch = product.name
+    .toLowerCase()
+    .includes(search.toLowerCase());
+
+  const matchesCategory =
+    category === "All" || product.category === category;
+
+  return matchesSearch && matchesCategory;
+  });
+  
+  return (
+    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
+
+      <Navbar />
+
+      <section className="px-6 py-20">
+        <div className="mx-auto max-w-7xl">
+
+          <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+
+            <div>
+              <h1 className="text-5xl font-bold text-slate-900">
+                Rental Products
+              </h1>
+
+              <p className="mt-3 text-slate-600">
+                Explore furniture and appliances available for rent
+              </p>
+            </div>
+            
+            <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+
+                <button
+                  onClick={() => setCategory("All")}
+                  className={`rounded-xl px-4 py-2 ${
+                    category === "All"
+                      ? "bg-indigo-600 text-white"
+                      : "bg-white border"
+                  }`}
+                >
+                  All
+                </button>
+
+                <button
+                  onClick={() => setCategory("Furniture")}
+                  className={`rounded-xl px-4 py-2 ${
+                    category === "Furniture"
+                      ? "bg-indigo-600 text-white"
+                      : "bg-white border"
+                  }`}
+                >
+                  Furniture
+                </button>
+
+                <button
+                  onClick={() => setCategory("Appliance")}
+                  className={`rounded-xl px-4 py-2 ${
+                    category === "Appliance"
+                      ? "bg-indigo-600 text-white"
+                      : "bg-white border"
+                  }`}
+                >
+                  Appliances
+                </button>
+
+            </div>
+
+            <input
+              type="text"
+              placeholder="Search products..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full rounded-2xl border border-slate-300 bg-white px-5 py-4 outline-none focus:border-indigo-500 md:w-96"
+            />
+
+          </div>
+
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredProducts.length === 0 && (
+              <div className="col-span-full text-center py-20">
+                <h2 className="text-3xl font-bold text-slate-800">
+                  No Products Found
+                </h2>
+
+                <p className="mt-3 text-slate-500">
+                  Try a different search keyword or category.
+                </p>
+              </div>
+            )}
+            {filteredProducts.map((product) => (
+              <Link
+                key={product.name}
+                href={`/products/${product.id}`}
+              >
+
+                <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-md transition hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl">
+
+                  <div className="flex h-44 items-center justify-center rounded-2xl bg-slate-100 text-7xl">
+                    {product.image}
+                  </div>
+
+                  <div className="mt-6 flex items-center justify-between">
+
+                    <span className="rounded-full bg-indigo-100 px-3 py-1 text-sm font-medium text-indigo-700">
+                      {product.category}
+                    </span>
+
+                    <span className="font-semibold text-indigo-600">
+                      {product.price}
+                    </span>
+
+                  </div>
+
+                  <h2 className="mt-5 text-2xl font-semibold text-slate-900">
+                    {product.name}
+                  </h2>
+                  <div className="mt-4 flex items-center justify-between">
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        
+                        
+                        if (wishlist.includes(product.id)) {
+
+                          const updatedWishlist =
+                            wishlist.filter((id) => id !== product.id);
+
+                          setWishlist(updatedWishlist);
+
+                          localStorage.setItem(
+                            "wishlist",
+                            JSON.stringify(updatedWishlist)
+                          );
+
+                          window.dispatchEvent(
+                            new Event("wishlistUpdated")
+                          );
+
+                        } else {
+
+                          const updatedWishlist = [
+                            ...wishlist,
+                            product.id,
+                          ];
+
+                          setWishlist(updatedWishlist);
+
+                          localStorage.setItem(
+                            "wishlist",
+                            JSON.stringify(updatedWishlist)
+                          );
+
+                          window.dispatchEvent(
+                            new Event("wishlistUpdated")
+                          );
+                        }
+                      }}
+                      className="text-2xl"
+                    >
+                      {wishlist.includes(product.id) ? "❤️" : "🤍"}
+                    </button>
+                  </div>
+
+                  <button className="mt-6 w-full rounded-xl bg-indigo-600 px-4 py-3 text-white transition hover:bg-indigo-700">
+                    Rent Now
+                  </button>
+
+                </div>
+
+              </Link>
+            ))}
+
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  );
+}
