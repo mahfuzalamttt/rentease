@@ -56,25 +56,21 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden items-center gap-8 text-sm font-medium text-slate-700 md:flex">
 
-          <li className="cursor-pointer transition hover:text-indigo-600">
+          <Link href="/" className="transition hover:text-indigo-600">
             Home
-          </li>
+          </Link>
 
-          <li className="cursor-pointer transition hover:text-indigo-600">
-            Furniture
-          </li>
+          <Link href="/products" className="transition hover:text-indigo-600">
+            Products
+          </Link>
 
-          <li className="cursor-pointer transition hover:text-indigo-600">
-            Appliances
-          </li>
-
-          <Link href="/wishlist">
+          <Link href="/wishlist" className="transition hover:text-indigo-600">
             Wishlist ({wishlistCount})
           </Link>
 
-          <li className="cursor-pointer transition hover:text-indigo-600">
+          <Link href="/about" className="transition hover:text-indigo-600">
             About
-          </li>
+          </Link>
 
         </ul>
 
@@ -99,10 +95,29 @@ export default function Navbar() {
 
           <ul className="space-y-6 text-lg font-medium text-slate-700">
 
-            <li>Home</li>
-            <li>Furniture</li>
-            <li>Appliances</li>
-            <li>About</li>
+            <li>
+              <Link href="/" className="transition hover:text-indigo-600">
+                Home
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/products" className="transition hover:text-indigo-600">
+            Products
+          </Link>
+            </li>
+
+            <li>
+              <Link href="/wishlist" className="transition hover:text-indigo-600">
+                Wishlist ({wishlistCount})
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/about" className="transition hover:text-indigo-600">
+                About
+              </Link>
+            </li>
 
             <button className="w-full rounded-xl bg-indigo-600 px-6 py-3 text-white">
               Login
