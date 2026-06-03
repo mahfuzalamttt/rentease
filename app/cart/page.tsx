@@ -80,14 +80,14 @@ export default function CartPage() {
         <section className="mx-auto max-w-7xl px-6 py-20">
 
   <h1 className="mb-10 text-5xl font-bold text-slate-900">
-    My Cart
+    My Cart 🛒
   </h1>
 
   {cartProducts.length === 0 ? (
 
     <div className="rounded-3xl bg-white p-12 text-center shadow-md">
       <h2 className="text-3xl font-bold">
-        Your Cart is Empty 🛒
+        Your Cart is Waiting 📦
       </h2>
 
       <p className="mt-3 text-slate-500">

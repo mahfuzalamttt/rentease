@@ -12,6 +12,11 @@ const products = [
     image: "🛋️",
     description:
       "A stylish and comfortable sofa perfect for modern apartments.",
+    features: [
+      "Premium Quality",
+      "Easy Maintenance",
+      "Modern Design",
+    ]
   },
 
   {
@@ -23,6 +28,11 @@ const products = [
     image: "🛏️",
     description:
       "Premium quality double bed with modern wooden finish.",
+    features: [
+      "Premium Quality",
+      "Easy Maintenance",
+      "Modern Design",
+    ]
   },
 
   {
@@ -34,6 +44,11 @@ const products = [
     image: "📺",
     description:
       "High-definition smart television for entertainment lovers.",
+    features: [
+      "Premium Quality",
+      "Easy Maintenance",
+      "Modern Design",
+    ]
   },
 ];
 
@@ -69,18 +84,42 @@ export default async function ProductDetailPage({
 
       <Navbar />
 
-      <section className="px-6 py-20">
+      <section className="px-6 py-12">
         <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2">
 
-          <div className="flex h-[500px] items-center justify-center rounded-3xl bg-white text-9xl shadow-md">
-            {product.image}
-          </div>
-
           <div>
+            <div className="flex h-[400px] items-center justify-center rounded-3xl bg-white text-9xl shadow-md">
+              {product.image}
+            </div>
 
-            <span className="rounded-full bg-indigo-100 px-4 py-2 text-sm font-medium text-indigo-700">
-              {product.category}
-            </span>
+            <div className="mt-6">
+
+              <h3 className="text-xl font-semibold text-slate-900">
+                Features
+              </h3>
+
+              <ul className="mt-4 flex flex-wrap gap-10">
+
+                {product.features.map((feature) => (
+                  <li
+                    key={feature}
+                    className="rounded-full bg-indigo-100 px-4 py-2 text-sm font-medium text-indigo-700"
+                  >
+                    ➤ {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div className="flex items-center gap-3">
+              <span className="rounded-full bg-indigo-100 px-4 py-2 text-sm font-medium text-indigo-700">
+                {product.category}
+              </span>
+              <span className="text-sm font-medium text-green-600">
+                🟢 Available
+              </span>
+            </div>
 
             <h1 className="mt-6 text-5xl font-bold text-slate-900">
               {product.name}
@@ -125,7 +164,6 @@ export default async function ProductDetailPage({
               />
 
             </div>
-
           </div>
 
         </div>
