@@ -77,7 +77,7 @@ export default function WishlistPage() {
 
       <Navbar />
 
-      <section className="mx-auto max-w-7xl px-6 py-20">
+      <section className="mx-auto max-w-7xl px-6 py-12">
 
         <h1 className="mb-10 text-5xl font-bold text-slate-900">
           My Wishlist ❤️

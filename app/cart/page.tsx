@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Navbar from "@/components/navbar";
+import Link from "next/link";
 
 const products = [
   {
@@ -77,7 +78,7 @@ export default function CartPage() {
     <main className="min-h-screen bg-slate-50">
         <Navbar />
 
-        <section className="mx-auto max-w-7xl px-6 py-20">
+        <section className="mx-auto max-w-7xl px-6 py-12">
 
   <h1 className="mb-10 text-5xl font-bold text-slate-900">
     My Cart 🛒
@@ -223,9 +224,11 @@ export default function CartPage() {
             Per Month
           </p>
 
-          <button className="mt-8 w-full rounded-xl bg-indigo-600 py-4 text-white transition hover:bg-indigo-700">
-            Proceed to Checkout
-          </button>
+          <Link href="/checkout">
+            <button className="mt-8 w-full rounded-xl bg-indigo-600 py-4 text-white transition hover:bg-indigo-700">
+              Proceed to Checkout
+            </button>
+          </Link>
 
         </div>
 
