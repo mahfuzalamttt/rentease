@@ -151,10 +151,7 @@ export default function ProductsPage() {
               </div>
             )}
             {filteredProducts.map((product) => (
-              <Link
-                key={product.name}
-                href={`/products/${product.id}`}
-              >
+              
 
                 <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-md transition hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl">
 
@@ -271,7 +268,7 @@ export default function ProductsPage() {
 
                 </div>
 
-              </Link>
+              
             ))}
 
           </div>

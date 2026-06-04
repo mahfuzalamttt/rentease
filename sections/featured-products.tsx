@@ -1,29 +1,9 @@
-const products = [
-  {
-    name: "Modern Sofa",
-    price: "₹1499/month",
-    image: "🛋️",
-  },
-  {
-    name: "Double Bed",
-    price: "₹1199/month",
-    image: "🛏️",
-  },
-  {
-    name: "Smart TV",
-    price: "₹999/month",
-    image: "📺",
-  },
-  {
-    name: "Refrigerator",
-    price: "₹1299/month",
-    image: "❄️",
-  },
-];
+import Link from "next/link";
+import { products } from "@/lib/products";
 
 export default function FeaturedProducts() {
   return (
-    <section className="px-6 py-20">
+    <section  id="featured-products" className="px-6 py-20">
       <div className="mx-auto max-w-7xl">
 
         <div className="text-center">
@@ -56,9 +36,12 @@ export default function FeaturedProducts() {
                 {product.price}
               </p>
 
-              <button className="mt-6 w-full rounded-xl bg-indigo-600 px-4 py-3 text-white transition hover:bg-indigo-700">
-                Rent Now
-              </button>
+              <Link
+                href={`/products/${product.id}`}
+                className="mt-6 block w-full rounded-xl bg-indigo-600 px-4 py-3 text-center text-white transition hover:bg-indigo-700"
+              >
+                View Details
+              </Link>
 
             </div>
           ))}

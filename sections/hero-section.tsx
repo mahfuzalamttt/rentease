@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
@@ -27,13 +28,19 @@ export default function HeroSection() {
 
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
 
-          <button className="rounded-xl bg-indigo-600 px-8 py-4 font-medium text-white transition hover:bg-indigo-700">
+          <Link
+            href="#featured-products"
+            className="rounded-xl bg-indigo-600 px-8 py-4 text-center font-medium text-white transition hover:bg-indigo-700"
+          >
             Explore Rentals
-          </button>
+          </Link>
 
-          <button className="rounded-xl border border-slate-300 bg-white px-8 py-4 font-medium text-slate-700 transition hover:bg-slate-100">
+          <Link
+            href="#categories"
+            className="rounded-xl border border-slate-300 bg-white px-8 py-4 text-center font-medium text-slate-700 transition hover:bg-slate-100"
+          >
             Browse Categories
-          </button>
+          </Link>
 
         </div>
 

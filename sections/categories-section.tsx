@@ -33,7 +33,7 @@ const categories = [
 
 export default function CategoriesSection() {
   return (
-    <section className="px-6 py-20">
+    <section id="categories" className="px-6 py-20">
       <div className="mx-auto max-w-7xl">
 
         <div className="text-center">
