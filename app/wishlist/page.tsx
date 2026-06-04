@@ -2,51 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Navbar from "@/components/navbar";
+import { products } from "@/lib/products";
 
-const products = [
-  {
-    id: 1,
-    name: "Modern Sofa",
-    category: "Furniture",
-    price: "₹1499/month",
-    image: "🛋️",
-  },
-  {
-    id: 2,
-    name: "Double Bed",
-    category: "Furniture",
-    price: "₹1199/month",
-    image: "🛏️",
-  },
-  {
-    id: 3,
-    name: "Smart TV",
-    category: "Appliance",
-    price: "₹999/month",
-    image: "📺",
-  },
-  {
-    id: 4,
-    name: "Refrigerator",
-    category: "Appliance",
-    price: "₹1299/month",
-    image: "❄️",
-  },
-  {
-    id: 5,
-    name: "Washing Machine",
-    category: "Appliance",
-    price: "₹899/month",
-    image: "🧺",
-  },
-  {
-    id: 6,
-    name: "Study Table",
-    category: "Furniture",
-    price: "₹699/month",
-    image: "🪑",
-  },
-];
 
 export default function WishlistPage() {
   const [wishlistIds, setWishlistIds] = useState<number[]>([]);

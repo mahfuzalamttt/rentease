@@ -2,56 +2,8 @@ import Link from "next/link";
 import Navbar from "@/components/navbar";
 import WishlistButton from "@/components/WishlistButton";
 import AddToCartButton from "@/components/AddToCartButton";
+import { products } from "@/lib/products";
 
-const products = [
-  {
-    id: 1,
-    name: "Modern Sofa",
-    category: "Furniture",
-    price: "₹1499/month",
-    deposit: "₹3000",
-    image: "🛋️",
-    description:
-      "A stylish and comfortable sofa perfect for modern apartments.",
-    features: [
-      "Premium Quality",
-      "Easy Maintenance",
-      "Modern Design",
-    ]
-  },
-
-  {
-    id: 2,
-    name: "Double Bed",
-    category: "Furniture",
-    price: "₹1199/month",
-    deposit: "₹2500",
-    image: "🛏️",
-    description:
-      "Premium quality double bed with modern wooden finish.",
-    features: [
-      "Premium Quality",
-      "Easy Maintenance",
-      "Modern Design",
-    ]
-  },
-
-  {
-    id: 3,
-    name: "Smart TV",
-    category: "Appliance",
-    price: "₹999/month",
-    deposit: "₹2000",
-    image: "📺",
-    description:
-      "High-definition smart television for entertainment lovers.",
-    features: [
-      "Premium Quality",
-      "Easy Maintenance",
-      "Modern Design",
-    ]
-  },
-];
 
 export default async function ProductDetailPage({
   params,

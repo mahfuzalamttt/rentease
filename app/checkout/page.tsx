@@ -3,59 +3,8 @@
 import Link from "next/link";
 import Navbar from "@/components/navbar";
 import { useEffect, useState } from "react";
+import { products } from "@/lib/products";
 
-const products = [
-  {
-    id: 1,
-    name: "Modern Sofa",
-    category: "Furniture",
-    price: "₹1499/month",
-    deposit: "₹3000",
-    image: "🛋️",
-  },
-  {
-    id: 2,
-    name: "Double Bed",
-    category: "Furniture",
-    price: "₹1199/month",
-    deposit: "₹2500",
-    image: "🛏️",
-  },
-  {
-    id: 3,
-    name: "Smart TV",
-    category: "Appliance",
-    price: "₹999/month",
-    deposit: "₹2000",
-    image: "📺",
-  },
-  {
-    id: 4,
-    name: "Refrigerator",
-    category: "Appliance",
-    price: "₹1299/month",
-    deposit: "₹2500",
-    image: "❄️",
-  },
-
-  {
-    id: 5,
-    name: "Washing Machine",
-    category: "Appliance",
-    price: "₹899/month",
-    deposit: "₹1800",
-    image: "🧺",
-  },
-
-  {
-    id: 6,
-    name: "Study Table",
-    category: "Furniture",
-    price: "₹699/month",
-    deposit: "₹1500",
-    image: "🪑",
-  },
-];
 
 export default function CheckoutPage() {
     const [cartIds, setCartIds] = useState<number[]>([]);
