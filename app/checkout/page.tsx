@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Navbar from "@/components/navbar";
 import { useEffect, useState } from "react";
 
@@ -241,9 +242,12 @@ export default function CheckoutPage() {
 
               </div>
 
-              <button className="mt-8 w-full rounded-xl bg-indigo-600 py-4 text-white transition hover:bg-indigo-700">
+              <Link
+                href="/success"
+                className="mt-8 block w-full rounded-xl bg-indigo-600 py-4 text-center text-white transition hover:bg-indigo-700"
+              >
                 Confirm Rental
-              </button>
+              </Link>
 
             </div>
 

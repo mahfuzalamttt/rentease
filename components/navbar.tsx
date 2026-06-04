@@ -115,9 +115,11 @@ export default function Navbar() {
         </ul>
 
         {/* Desktop Button */}
-        <button className="hidden rounded-xl bg-indigo-600 px-6 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 md:block">
-          Login
-        </button>
+        <Link href="/auth">
+          <button className="hidden rounded-xl bg-indigo-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-indigo-700 md:block">
+            Login / Register
+          </button>
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
@@ -165,9 +167,12 @@ export default function Navbar() {
               </Link>
             </li>
 
-            <button className="w-full rounded-xl bg-indigo-600 px-6 py-3 text-white">
-              Login
-            </button>
+            <Link 
+              href="/auth">
+              <button className="w-full rounded-xl bg-indigo-600 px-6 py-3 text-white font-bold" >
+                Login / Register
+                </button>
+            </Link>
 
           </ul>
 

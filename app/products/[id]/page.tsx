@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/navbar";
 import WishlistButton from "@/components/WishlistButton";
+import AddToCartButton from "@/components/AddToCartButton";
 
 const products = [
   {
@@ -98,7 +99,7 @@ export default async function ProductDetailPage({
                 Features
               </h3>
 
-              <ul className="mt-4 flex flex-wrap gap-10">
+              <ul className="mt-4 flex flex-wrap gap-3">
 
                 {product.features.map((feature) => (
                   <li
@@ -155,9 +156,9 @@ export default async function ProductDetailPage({
 
             <div className="mt-10 flex gap-4">
 
-              <button className="rounded-xl bg-indigo-600 px-8 py-4 text-white transition hover:bg-indigo-700">
-                Rent Now
-              </button>
+              <AddToCartButton
+                productId={product.id}
+              />
 
               <WishlistButton
                 productId={product.id}

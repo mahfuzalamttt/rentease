@@ -307,9 +307,16 @@ export default function ProductsPage() {
                       ? "✅ Added to Cart"
                       : "🛒 Add to Cart"}
                   </button>
-                  <button className="mt-6 w-full rounded-xl bg-indigo-600 px-4 py-3 text-white transition hover:bg-indigo-700">
-                    Rent Now
-                  </button>
+                  <div className="mt-6">
+
+                    <Link
+                      href={`/products/${product.id}`}
+                      className="block w-full rounded-xl bg-indigo-600 py-3 text-center text-white transition hover:bg-indigo-700"
+                    >
+                      View Details
+                    </Link>
+
+                  </div>
 
                 </div>
 
