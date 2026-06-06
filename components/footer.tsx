@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-white px-6 py-16">
@@ -9,7 +11,9 @@ export default function Footer() {
           </h2>
 
           <p className="mt-4 text-slate-600">
-            Affordable furniture and appliance rentals for modern urban living.
+            Rent furniture and appliances with ease.
+            Affordable, flexible, and hassle-free rentals
+            for students, professionals, and families.
           </p>
         </div>
 
@@ -19,10 +23,21 @@ export default function Footer() {
           </h3>
 
           <ul className="mt-4 space-y-3 text-slate-600">
-            <li>Home</li>
-            <li>Furniture</li>
-            <li>Appliances</li>
-            <li>About</li>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+
+            <li>
+              <Link href="/products">Products</Link>
+            </li>
+
+            <li>
+              <Link href="/about">About</Link>
+            </li>
+
+            <li>
+              <Link href="/contact">Contact</Link>
+            </li>
           </ul>
         </div>
 
@@ -32,10 +47,29 @@ export default function Footer() {
           </h3>
 
           <ul className="mt-4 space-y-3 text-slate-600">
-            <li>Help Center</li>
-            <li>Terms & Conditions</li>
-            <li>Privacy Policy</li>
-            <li>Contact Us</li>
+
+            <li>
+              <Link href="/about">
+                About
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/contact">
+                Contact
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/auth">
+                Login / Register
+              </Link>
+            </li>
+
+            <li>
+              FAQ
+            </li>
+
           </ul>
         </div>
 
@@ -47,14 +81,14 @@ export default function Footer() {
           <ul className="mt-4 space-y-3 text-slate-600">
             <li>support@rentease.com</li>
             <li>+91 98765 43210</li>
-            <li>Ballia, India</li>
+            <li>India</li>
           </ul>
         </div>
 
       </div>
 
       <div className="mt-16 border-t border-slate-200 pt-6 text-center text-sm text-slate-500">
-        © 2026 RentEase. All rights reserved.
+        © 2026 RentEase. Made with ❤️ for modern rental living.
       </div>
     </footer>
   );

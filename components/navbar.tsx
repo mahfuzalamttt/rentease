@@ -111,12 +111,16 @@ export default function Navbar() {
           <Link href="/about" className="transition hover:text-indigo-600">
             About
           </Link>
+          
+          <Link href="/contact" className="transition hover:text-indigo-600">
+            Contact
+          </Link>
 
         </ul>
 
         {/* Desktop Button */}
         <Link href="/auth">
-          <button className="hidden rounded-xl bg-indigo-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-indigo-700 md:block">
+          <button className="hidden rounded-xl bg-indigo-600 px-6 py-3 text-sm font-light text-white transition hover:bg-indigo-700 md:block">
             Login / Register
           </button>
         </Link>
@@ -169,7 +173,7 @@ export default function Navbar() {
 
             <Link 
               href="/auth">
-              <button className="w-full rounded-xl bg-indigo-600 px-6 py-3 text-white font-bold" >
+              <button className="w-full rounded-xl bg-indigo-600 px-6 py-3 text-white font-light" >
                 Login / Register
                 </button>
             </Link>

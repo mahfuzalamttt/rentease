@@ -18,7 +18,7 @@ export default function FeaturedProducts() {
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
-          {products.map((product) => (
+          {products.slice(0,4).map((product) => (
             <div
               key={product.name}
               className="rounded-3xl bg-white p-6 border border-slate-200 shadow-md transition hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl"
