@@ -1,6 +1,6 @@
 # RentEase
 
-A modern furniture and appliances rental platform built with Next.js, TypeScript, and Tailwind CSS.
+A modern furniture and appliance rental platform built with Next.js, TypeScript, and Tailwind CSS.
 
 ## Overview
 
