@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import Navbar from "@/components/navbar";
 import { products } from "@/lib/products";
 
@@ -12,16 +11,6 @@ export default function ProductsPage() {
   const [category, setCategory] = useState("All");
   const [wishlist, setWishlist] = useState<number[]>([]);
   const [cart, setCart] = useState<number[]>([]);
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-  const categoryFromUrl =
-    searchParams.get("category");
-
-  if (categoryFromUrl) {
-    setCategory(categoryFromUrl);
-  }
-  }, [searchParams]);
 
   useEffect(() => {
   const savedWishlist = localStorage.getItem("wishlist");
