@@ -37,7 +37,7 @@ export default function CartPage() {
 
         <section className="mx-auto max-w-7xl px-6 py-12">
 
-  <h1 className="mb-10 text-5xl font-bold text-slate-900">
+  <h1 className="mb-8 text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900">
     My Cart 🛒
   </h1>
 
@@ -58,9 +58,9 @@ export default function CartPage() {
     <div className="grid gap-8 lg:grid-cols-[2fr_1fr]">
 
       {/* Left Side */}
-      <div className="overflow-hidden rounded-3xl bg-white shadow-md">
+      <div className="overflow-x-auto rounded-3xl bg-white shadow-md">
 
-        <div className="grid grid-cols-3 border-b bg-gradient-to-b from-cyan-50 via-white to-blue-50 px-8 py-5 font-semibold text-slate-700">
+        <div className="grid min-w-[650px] grid-cols-[2fr_1fr_1fr] border-b bg-gradient-to-b from-cyan-50 via-white to-blue-50 px-8 py-5 font-semibold text-slate-700">
 
           <div>Product</div>
           <div>Monthly Rent</div>
@@ -72,7 +72,7 @@ export default function CartPage() {
 
           <div
             key={product.id}
-            className="grid grid-cols-3 items-center border-b px-8 py-6"
+            className="grid min-w-[650px] grid-cols-[2fr_1fr_1fr] items-center border-b px-8 py-6"
           >
 
             <div className="flex items-center gap-4">
