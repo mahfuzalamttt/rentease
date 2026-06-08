@@ -56,7 +56,7 @@ export default async function ProductDetailPage({
                 {product.features.map((feature) => (
                   <li
                     key={feature}
-                    className="rounded-full bg-indigo-100 px-4 py-2 text-sm font-medium text-indigo-700"
+                    className="rounded-full bg-cyan-100 px-4 py-2 text-sm font-medium text-cyan-700"
                   >
                     ➤ {feature}
                   </li>
@@ -66,7 +66,7 @@ export default async function ProductDetailPage({
           </div>
           <div>
             <div className="flex items-center gap-3">
-              <span className="rounded-full bg-indigo-100 px-4 py-2 text-sm font-medium text-indigo-700">
+              <span className="rounded-full bg-cyan-100 px-4 py-2 text-sm font-medium text-cyan-700">
                 {product.category}
               </span>
               <span className="text-sm font-medium text-green-600">
@@ -89,7 +89,7 @@ export default async function ProductDetailPage({
                   Monthly Rent
                 </span>
 
-                <span className="text-2xl font-bold text-indigo-600">
+                <span className="text-2xl font-bold text-cyan-600">
                   {product.price}
                 </span>
               </div>
@@ -146,7 +146,7 @@ export default async function ProductDetailPage({
                     {item.name}
                   </h3>
 
-                  <p className="mt-2 font-medium text-indigo-600">
+                  <p className="mt-2 font-medium text-cyan-600">
                     {item.price}
                   </p>
 

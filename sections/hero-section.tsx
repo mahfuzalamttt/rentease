@@ -9,11 +9,11 @@ export default function HeroSection() {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="px-6 py-20 md:py-28"
+      className="px-6 py-12 md:py-28"
     >
       <div className="mx-auto flex max-w-6xl flex-col items-center text-center">
 
-        <span className="rounded-full bg-indigo-100 px-4 py-2 text-sm font-medium text-indigo-700">
+        <span className="rounded-full bg-cyan-100 px-4 py-2 text-sm font-medium text-cyan-700">
           Affordable Monthly Rentals
         </span>
 
@@ -30,7 +30,7 @@ export default function HeroSection() {
 
           <Link
             href="#featured-products"
-            className="rounded-xl bg-indigo-600 px-8 py-4 text-center font-medium text-white transition hover:bg-indigo-700"
+            className="rounded-xl bg-cyan-600 px-8 py-4 text-center font-medium text-white transition hover:bg-cyan-700"
           >
             Explore Rentals
           </Link>

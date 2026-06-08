@@ -2,11 +2,11 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-white px-6 py-16">
+    <footer className="border-t border-slate-200 bg-gradient-to-b from-cyan-50 via-white to-blue-100 px-6 py-16">
       <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-4">
 
         <div>
-          <h2 className="text-3xl font-bold text-indigo-600">
+          <h2 className="text-3xl font-bold text-cyan-600">
             RentEase
           </h2>
 
@@ -32,11 +32,11 @@ export default function Footer() {
             </li>
 
             <li>
-              <Link href="/about">About</Link>
+              <Link href="/wishlist">Wishlist</Link>
             </li>
 
             <li>
-              <Link href="/contact">Contact</Link>
+              <Link href="/cart">Cart</Link>
             </li>
           </ul>
         </div>

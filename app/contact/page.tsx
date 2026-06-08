@@ -2,7 +2,7 @@ import Navbar from "@/components/navbar";
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-slate-50">
+    <main className="min-h-screen bg-gradient-to-b from-cyan-50 via-white to-blue-50">
 
       <Navbar />
 
@@ -44,7 +44,7 @@ export default function ContactPage() {
                 className="w-full rounded-xl border p-2"
               />
 
-              <button className="w-full rounded-xl bg-indigo-600 py-4 text-white">
+              <button className="w-full rounded-xl bg-cyan-600 py-4 text-white">
                 Send Message
               </button>
 

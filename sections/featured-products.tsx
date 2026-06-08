@@ -32,13 +32,13 @@ export default function FeaturedProducts() {
                 {product.name}
               </h3>
 
-              <p className="mt-2 text-indigo-600 font-medium">
+              <p className="mt-2 text-cyan-600 font-medium">
                 {product.price}
               </p>
 
               <Link
                 href={`/products/${product.id}`}
-                className="mt-6 block w-full rounded-xl bg-indigo-600 px-4 py-3 text-center text-white transition hover:bg-indigo-700"
+                className="mt-6 block w-full rounded-xl bg-cyan-600 px-4 py-3 text-center text-white transition hover:bg-cyan-700"
               >
                 View Details
               </Link>

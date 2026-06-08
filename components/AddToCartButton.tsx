@@ -54,7 +54,7 @@ export default function AddToCartButton({
       className={`rounded-xl px-8 py-4 text-white transition ${
         isAdded
           ? "bg-green-600"
-          : "bg-indigo-600 hover:bg-indigo-700"
+          : "bg-cyan-600 hover:bg-cyan-700"
       }`}
     >
       {isAdded

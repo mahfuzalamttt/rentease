@@ -44,7 +44,7 @@ export default function CheckoutPage() {
     const grandTotal =
             totalRent + totalDeposit;
     return (
-    <main className="min-h-screen bg-slate-50">
+    <main className="min-h-screen bg-gradient-to-b from-cyan-50 via-white to-blue-50">
 
       <Navbar />
 
@@ -69,19 +69,19 @@ export default function CheckoutPage() {
               <input
                 type="text"
                 placeholder="Full Name"
-                className="rounded-xl border p-4 outline-none focus:border-indigo-500"
+                className="rounded-xl border p-4 outline-none focus:border-cyan-500"
               />
 
               <input
                 type="email"
                 placeholder="Email Address"
-                className="rounded-xl border p-4 outline-none focus:border-indigo-500"
+                className="rounded-xl border p-4 outline-none focus:border-cyan-500"
               />
 
               <input
                 type="tel"
                 placeholder="Phone Number"
-                className="rounded-xl border p-4 outline-none focus:border-indigo-500"
+                className="rounded-xl border p-4 outline-none focus:border-cyan-500"
               />
 
             </div>
@@ -95,19 +95,19 @@ export default function CheckoutPage() {
               <input
                 type="text"
                 placeholder="City"
-                className="rounded-xl border p-4 outline-none focus:border-indigo-500"
+                className="rounded-xl border p-4 outline-none focus:border-cyan-500"
               />
 
               <input
                 type="text"
                 placeholder="State"
-                className="rounded-xl border p-4 outline-none focus:border-indigo-500"
+                className="rounded-xl border p-4 outline-none focus:border-cyan-500"
               />
 
               <input
                 type="text"
                 placeholder="Pincode"
-                className="rounded-xl border p-4 outline-none focus:border-indigo-500"
+                className="rounded-xl border p-4 outline-none focus:border-cyan-500"
               />
 
             </div>
@@ -183,7 +183,7 @@ export default function CheckoutPage() {
                     Grand Total
                   </span>
 
-                  <span className="text-indigo-600">
+                  <span className="text-cyan-600">
                     ₹{grandTotal}
                   </span>
 
@@ -193,7 +193,7 @@ export default function CheckoutPage() {
 
               <Link
                 href="/success"
-                className="mt-8 block w-full rounded-xl bg-indigo-600 py-4 text-center text-white transition hover:bg-indigo-700"
+                className="mt-8 block w-full rounded-xl bg-cyan-600 py-4 text-center text-white transition hover:bg-cyan-700"
               >
                 Confirm Rental
               </Link>

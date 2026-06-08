@@ -72,7 +72,7 @@ export default function ProductsPage() {
   });
   
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
+    <main className="min-h-screen bg-gradient-to-b from-cyan-50 via-white to-blue-100">
 
       <Navbar />
 
@@ -97,7 +97,7 @@ export default function ProductsPage() {
                   onClick={() => setCategory("All")}
                   className={`rounded-xl px-4 py-2 ${
                     category === "All"
-                      ? "bg-indigo-600 text-white"
+                      ? "bg-cyan-600 text-white"
                       : "bg-white border"
                   }`}
                 >
@@ -108,7 +108,7 @@ export default function ProductsPage() {
                   onClick={() => setCategory("Furniture")}
                   className={`rounded-xl px-4 py-2 ${
                     category === "Furniture"
-                      ? "bg-indigo-600 text-white"
+                      ? "bg-cyan-600 text-white"
                       : "bg-white border"
                   }`}
                 >
@@ -119,7 +119,7 @@ export default function ProductsPage() {
                   onClick={() => setCategory("Appliance")}
                   className={`rounded-xl px-4 py-2 ${
                     category === "Appliance"
-                      ? "bg-indigo-600 text-white"
+                      ? "bg-cyan-600 text-white"
                       : "bg-white border"
                   }`}
                 >
@@ -133,7 +133,7 @@ export default function ProductsPage() {
               placeholder="Search products..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full rounded-2xl border border-slate-300 bg-white px-5 py-4 outline-none focus:border-indigo-500 md:w-96"
+              className="w-full rounded-2xl border border-slate-300 bg-white px-5 py-4 outline-none focus:border-cyan-500 md:w-96"
             />
 
           </div>
@@ -161,11 +161,11 @@ export default function ProductsPage() {
 
                   <div className="mt-6 flex items-center justify-between">
 
-                    <span className="rounded-full bg-indigo-100 px-3 py-1 text-sm font-medium text-indigo-700">
+                    <span className="rounded-full bg-cyan-100 px-3 py-1 text-sm font-medium text-cyan-700">
                       {product.category}
                     </span>
 
-                    <span className="font-semibold text-indigo-600">
+                    <span className="font-semibold text-cyan-600">
                       {product.price}
                     </span>
 
@@ -259,7 +259,7 @@ export default function ProductsPage() {
 
                     <Link
                       href={`/products/${product.id}`}
-                      className="block w-full rounded-xl bg-indigo-600 py-3 text-center text-white transition hover:bg-indigo-700"
+                      className="block w-full rounded-xl bg-cyan-600 py-3 text-center text-white transition hover:bg-cyan-700"
                     >
                       View Details
                     </Link>

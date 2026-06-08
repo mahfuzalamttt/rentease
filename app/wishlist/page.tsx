@@ -30,7 +30,7 @@ export default function WishlistPage() {
   );
 
   return (
-    <main className="min-h-screen bg-slate-50">
+    <main className="min-h-screen bg-gradient-to-b from-cyan-50 via-white to-blue-50">
 
       <Navbar />
 
@@ -55,7 +55,7 @@ export default function WishlistPage() {
         ) : (
           <div className="mt-12 overflow-hidden rounded-3xl bg-white shadow-md">
 
-        <div className="grid grid-cols-4 border-b bg-slate-50 px-8 py-5 font-semibold   text-slate-700">
+        <div className="grid grid-cols-4 border-b bg-gradient-to-b from-cyan-50 via-white to-blue-50 px-8 py-5 font-semibold   text-slate-700">
 
           <div>Product</div>
           <div>Monthly Rent</div>
@@ -91,7 +91,7 @@ export default function WishlistPage() {
 
             </div>
 
-            <div className="font-semibold text-indigo-600">
+            <div className="font-semibold text-cyan-600">
               {product.price}
             </div>
 

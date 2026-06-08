@@ -3,7 +3,7 @@ import Navbar from "@/components/navbar";
 
 export default function SuccessPage() {
   return (
-    <main className="min-h-screen bg-slate-50">
+    <main className="min-h-screen bg-gradient-to-b from-cyan-50 via-white to-blue-50">
 
       <Navbar />
 
@@ -30,7 +30,7 @@ export default function SuccessPage() {
 
             <Link
               href="/products"
-              className="rounded-xl bg-indigo-600 px-8 py-4 text-white transition hover:bg-indigo-700"
+              className="rounded-xl bg-cyan-600 px-8 py-4 text-white transition hover:bg-cyan-700"
             >
               Browse More Products
             </Link>

@@ -32,7 +32,7 @@ export default function CartPage() {
         0
     );
   return (
-    <main className="min-h-screen bg-slate-50">
+    <main className="min-h-screen bg-gradient-to-b from-cyan-50 via-white to-blue-50">
         <Navbar />
 
         <section className="mx-auto max-w-7xl px-6 py-12">
@@ -60,7 +60,7 @@ export default function CartPage() {
       {/* Left Side */}
       <div className="overflow-hidden rounded-3xl bg-white shadow-md">
 
-        <div className="grid grid-cols-3 border-b bg-slate-50 px-8 py-5 font-semibold text-slate-700">
+        <div className="grid grid-cols-3 border-b bg-gradient-to-b from-cyan-50 via-white to-blue-50 px-8 py-5 font-semibold text-slate-700">
 
           <div>Product</div>
           <div>Monthly Rent</div>
@@ -95,7 +95,7 @@ export default function CartPage() {
 
             </div>
 
-            <div className="font-semibold text-indigo-600">
+            <div className="font-semibold text-cyan-600">
               {product.price}
             </div>
 
@@ -171,7 +171,7 @@ export default function CartPage() {
               Total Rent
             </span>
 
-            <span className="text-2xl font-bold text-indigo-600">
+            <span className="text-2xl font-bold text-cyan-600">
               ₹{totalRent}
             </span>
 
@@ -182,7 +182,7 @@ export default function CartPage() {
           </p>
 
           <Link href="/checkout">
-            <button className="mt-8 w-full rounded-xl bg-indigo-600 py-4 text-white transition hover:bg-indigo-700">
+            <button className="mt-8 w-full rounded-xl bg-cyan-600 py-4 text-white transition hover:bg-cyan-700">
               Proceed to Checkout
             </button>
           </Link>

@@ -4,7 +4,7 @@ import Navbar from "@/components/navbar";
 
 export default function AuthPage() {
   return (
-    <main className="min-h-screen bg-slate-50">
+    <main className="min-h-screen bg-gradient-to-b from-cyan-50 via-white to-blue-50">
       <Navbar />
 
       <section className="mx-auto max-w-7xl px-6 py-4">
@@ -38,16 +38,16 @@ export default function AuthPage() {
                 <input
                   type="email"
                   placeholder="Email Address"
-                  className="w-full rounded-xl border px-4 py-3 outline-none focus:border-indigo-500"
+                  className="w-full rounded-xl border px-4 py-3 outline-none focus:border-cyan-500"
                 />
 
                 <input
                   type="password"
                   placeholder="Password"
-                  className="w-full rounded-xl border px-4 py-3 outline-none focus:border-indigo-500"
+                  className="w-full rounded-xl border px-4 py-3 outline-none focus:border-cyan-500"
                 />
 
-                <button className="w-full rounded-xl bg-indigo-600 py-4 text-white transition hover:bg-indigo-700 font-bold">
+                <button className="w-full rounded-xl bg-cyan-600 py-4 text-white transition hover:bg-cyan-700 font-bold">
                   Login
                 </button>
 
@@ -59,7 +59,7 @@ export default function AuthPage() {
 
             <div className="flex items-center justify-center">
 
-              <div className="flex h-16 w-16 items-center justify-center rounded-full border-4 border-slate-200 bg-indigo-600 font-bold text-white shadow-md">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full border-4 border-slate-200 bg-cyan-600 font-bold text-white shadow-md">
                 OR
               </div>
 
@@ -82,22 +82,22 @@ export default function AuthPage() {
                 <input
                   type="text"
                   placeholder="Full Name"
-                  className="w-full rounded-xl border px-4 py-3 outline-none focus:border-indigo-500"
+                  className="w-full rounded-xl border px-4 py-3 outline-none focus:border-cyan-500"
                 />
 
                 <input
                   type="email"
                   placeholder="Email Address"
-                  className="w-full rounded-xl border px-4 py-3 outline-none focus:border-indigo-500"
+                  className="w-full rounded-xl border px-4 py-3 outline-none focus:border-cyan-500"
                 />
 
                 <input
                   type="password"
                   placeholder="Password"
-                  className="w-full rounded-xl border p-4 outline-none focus:border-indigo-500"
+                  className="w-full rounded-xl border p-4 outline-none focus:border-cyan-500"
                 />
 
-                <button className="w-full rounded-xl bg-indigo-600 py-4 text-white transition hover:bg-indigo-700 font-bold">
+                <button className="w-full rounded-xl bg-cyan-600 py-4 text-white transition hover:bg-cyan-700 font-bold">
                   Register
                 </button>
 
